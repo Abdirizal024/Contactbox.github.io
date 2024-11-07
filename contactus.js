@@ -4,8 +4,8 @@
 function sendEmail() {
     Email.send({
         Host: "smtp.gmail.com",
-        Port: "465"
-        Secure: true
+        Port: "465",
+        Secure: true,
         Username: "rizalbjm7788@gmail.com",
         Password: "eobkbyunwcvcoxcq",
         To: 'rizalbjm7788@gmail.com',
