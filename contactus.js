@@ -4,8 +4,10 @@
 function sendEmail() {
     Email.send({
         Host: "smtp.gmail.com",
+        Port: "465"
+        Secure: true
         Username: "rizalbjm7788@gmail.com",
-        Password: "blxvjntdxvvdctlf",
+        Password: "eobkbyunwcvcoxcq",
         To: 'rizalbjm7788@gmail.com',
         From: document.getElementById("email").value,
         Subject: "New Inquery on iVishMusic.com",
