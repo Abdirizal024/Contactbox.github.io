@@ -5,7 +5,7 @@ function sendEmail() {
     Email.send({
         Host: "smtp.gmail.com",
         Username: "rizalbjm7788@gmail.com",
-        Password: "blxv jntd xvvd ctlf",
+        Password: "blxvjntdxvvdctlf",
         To: 'rizalbjm7788@gmail.com',
         From: document.getElementById("email").value,
         Subject: "New Inquery on iVishMusic.com",
