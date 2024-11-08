@@ -19,17 +19,18 @@
     </nav>
 
     <div class="acontainer">
-        <form onsubmit="sendEmail(); reset(); return false;">
-            <h3>GET IN TOUCH WITH US</h3>
-            <input type="text" id="name" placeholder="Your Name">
-            <input type="email" id="email" placeholder="Your Email">
-            <input type="number" id="phone" placeholder="Phone No.">
-            <textarea id="messege" rows="4" placeholder="Add your query here."></textarea>
-            <button type="submit">Submit</button>
-        </form>
+        <!-- Formulir Kontak -->
+<form action="https://formspree.io/f/movqdyea" method="POST" onsubmit="handleFormSubmit(event)">
+    <h3>GET IN TOUCH WITH US</h3>
+    <input type="text" name="name" id="name" placeholder="Your Name" required>
+    <input type="email" name="email" id="email" placeholder="Your Email" required>
+    <input type="number" name="phone" id="phone" placeholder="Phone No." required>
+    <textarea name="message" id="message" rows="4" placeholder="Add your query here." required></textarea>
+    <button type="submit">Submit</button>
+</form>
     </div>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="contactus.js"> </script>
 </body>
 </html>
