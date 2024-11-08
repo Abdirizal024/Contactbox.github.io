@@ -5,7 +5,7 @@ function sendEmail() {
         const formData = new FormData(form);
 
         // Ganti "https://formspree.io/f/your_form_id" dengan endpoint Formspree Anda
-        fetch("https://formspree.io/f/your_form_id", {
+        fetch("https://formspree.io/f/movqdyea", {
             method: "POST",
             headers: { "Accept": "application/json" },
             body: formData
