@@ -20,17 +20,18 @@
 
     <div class="acontainer">
         <!-- Formulir Kontak -->
-<form action="https://formspree.io/f/movqdyea" method="POST" onsubmit="handleFormSubmit(event)">
+<!-- Formulir Kontak -->
+<form id="contactForm" onsubmit="sendEmail(); return false;">
     <h3>GET IN TOUCH WITH US</h3>
-    <input type="text" name="name" id="name" placeholder="Your Name" required>
-    <input type="email" name="email" id="email" placeholder="Your Email" required>
-    <input type="number" name="phone" id="phone" placeholder="Phone No." required>
-    <textarea name="message" id="message" rows="4" placeholder="Add your query here." required></textarea>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <input type="number" id="phone" name="phone" placeholder="Phone No." required>
+    <textarea id="message" name="message" rows="4" placeholder="Add your query here." required></textarea>
     <button type="submit">Submit</button>
 </form>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="contactus.js"> </script>
+<!-- Tambahkan SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="contactus.js"> </script>
 </body>
 </html>
