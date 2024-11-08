@@ -1,29 +1,29 @@
- document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form from submitting the default way
+ function handleFormSubmit(event) {
+        event.preventDefault(); // Mencegah pengiriman default formulir
 
         const form = event.target;
-        const formData = new FormData(form);
 
+        // Mengirim data ke Formspree
         fetch(form.action, {
             method: form.method,
             headers: { 'Accept': 'application/json' },
-            body: formData
+            body: new FormData(form)
         })
         .then(response => {
             if (response.ok) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Email Sent',
-                    text: 'Your email was successfully sent!',
+                    text: 'Your message has been successfully sent!',
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Great!'
+                    confirmButtonText: 'OK'
                 });
-                form.reset(); // Reset the form after successful submission
+                form.reset(); // Reset form setelah berhasil
             } else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Failed to Send',
-                    text: 'There was an issue sending your email. Please try again.',
+                    text: 'There was an issue sending your message. Please try again.',
                     confirmButtonColor: '#d33',
                     confirmButtonText: 'Try Again'
                 });
@@ -38,4 +38,4 @@
                 confirmButtonText: 'OK'
             });
         });
-    });
+ }
