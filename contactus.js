@@ -1,22 +1,23 @@
- function handleFormSubmit(event) {
-        event.preventDefault(); // Mencegah pengiriman default formulir
+function sendEmail() {
+        const form = document.getElementById('contactForm');
 
-        const form = event.target;
+        // FormData to handle form data for fetch request
+        const formData = new FormData(form);
 
-        // Mengirim data ke Formspree
-        fetch(form.action, {
-            method: form.method,
-            headers: { 'Accept': 'application/json' },
-            body: new FormData(form)
+        // Ganti "https://formspree.io/f/your_form_id" dengan endpoint Formspree Anda
+        fetch("https://formspree.io/f/your_form_id", {
+            method: "POST",
+            headers: { "Accept": "application/json" },
+            body: formData
         })
         .then(response => {
             if (response.ok) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Email Sent',
-                    text: 'Your message has been successfully sent!',
+                    text: 'Your message was successfully sent!',
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'Great!'
                 });
                 form.reset(); // Reset form setelah berhasil
             } else {
@@ -38,4 +39,4 @@
                 confirmButtonText: 'OK'
             });
         });
- }
+    }
